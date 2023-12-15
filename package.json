@@ -1,0 +1,14 @@
+{
+  "name": "veranoremax",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge Penela - Anarketing Publicidad",
+  "license": "ISC",
+  "dependencies": {
+    "collider-js": "^1.1.0"
+  }
+}

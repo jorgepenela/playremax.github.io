@@ -1,0 +1,18 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Jorge Penela - Anarketing - https://www.behance.net/jorgepenela
+    Jimena Polleschi - Anarketing 
+
+# THANKS
+
+    <a href='https://www.freepik.es/vectors/viajes'>Vector de Viajes creado por rawpixel.com - www.freepik.es</a>
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, JS
+    
+
+

@@ -1,0 +1,116 @@
+* { box-sizing: border-box; font-family: 'Montserrat', sans-serif; font-weight: 400; max-width: 100%; text-align: center; outline: none !important; touch-action: manipulation; }
+
+@keyframes body { 0% { background-position-y: 100%; }
+  100% { background-position-y: 0%; } }
+
+body { overflow-y: hidden; background-image: url(../img/background.jpg); animation: body 300s infinite; }
+
+main { position: relative; margin: 0 auto; max-width: 500px; background: #40b2ff; background: -moz-linear-gradient(0deg, #40b2ff 0%, white 100%); background: -webkit-linear-gradient(0deg, #40b2ff 0%, white 100%); background: linear-gradient(0deg, #40b2ff 0%, white 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#40b2ff",endColorstr="#ffffff",GradientType=1); }
+
+header { padding: 10px; position: fixed; width: 100%; max-width: 500px; background: #002d6f; color: #fff; z-index: 2; }
+
+section { padding-top: 40px; height: 100vh; overflow-y: hidden; }
+
+canvas { background-color: #000; }
+
+@keyframes oka { 0% { transform: scale(2); }
+  100% { transform: scale(1); } }
+
+.hidden { display: none; }
+
+.btn-success { border: none; }
+
+.relative { position: relative; }
+
+.absolute { position: absolute; }
+
+.target { background: transparent; border: solid 3px #c9ffa0; opacity: 0.7; width: 45px; height: 45px; border-radius: 100%; position: absolute; z-index: 3; opacity: 0.0; box-shadow: 1px 1px 5px #6eff00; }
+
+.target.oka { opacity: 1; animation: oka 1s; }
+
+#reloj { background: #f4919b; width: 100%; height: 20px; position: fixed; bottom: 0px; left: 0px; }
+
+#reloj span { position: fixed; background: #dc1c2e; z-index: 4; bottom: 0px; left: 0px; font-size: 20px; height: 20px; text-align: left; color: #dc1c2e; }
+
+.desactivar { pointer-events: none; opacity: 0.5; }
+
+.consigna { background: #002d6f; color: #fff; min-height: 35vh; padding: 30px; margin: 30px; border: solid 5px #fff; border-radius: 30px; }
+
+.consigna button { background: #dc1c2e; color: #fff; padding: 10px 30px; border-radius: 10px; border: none; }
+
+.consigna h1 { font-size: 14px; }
+
+.consigna p { font-size: 18px; }
+
+.juego { position: relative; width: 320px; margin: 0 auto; }
+
+@keyframes mensaje { 0% { top: 200%; }
+  100% { top: 100px; } }
+
+#mensaje { position: fixed; background: #002d6f; color: #fff; top: 100px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 450px; z-index: 4; text-align: center; padding: 30px; border: solid 5px #fff; border-radius: 30px; }
+
+.mensajeDesplegado { animation: mensaje 1s; }
+
+#a2hs { background: #002d6f; color: #fff; }
+
+#home, #niveles { position: relative; z-index: 1; background-image: url(../img/home.jpg); background-size: cover; }
+
+#home .remaxlogo { width: 100px; margin: 20px; margin-top: 40px; }
+
+#home h1 { color: #002d6f; font-weight: bold; }
+
+#home #playGame img { width: 60px; height: 60px; }
+
+#home .btn:focus { background-color: #002d6f; color: #fff; }
+
+#legales { background-image: url(../img/home.jpg); background-size: cover; padding: 20px; }
+
+#legales h1 { margin-top: 30px; }
+
+#legales p { font-size: 0.8; }
+
+#tutorial { background-image: url(../img/home.jpg); background-size: cover; }
+
+#tutorial #playGame img { width: 60px; height: 60px; }
+
+#tutorial .btn-success { background: #002d6f; }
+
+#niveles h1 { color: #002d6f; }
+
+#niveles a { display: inline-block; margin: 5px; background-color: #002d6f; color: #fff; padding: 20px 0px; width: 60px; }
+
+@keyframes error { 0% { transform: translateX(-10px); }
+  10% { transform: translateX(20px); }
+  20% { transform: translateX(-5px); }
+  30% { transform: translateX(20px); }
+  50% { transform: translateX(-5px); }
+  100% { transform: translateX(0px); } }
+
+.error { animation-name: error; animation-duration: 1s; }
+
+.iconTouch, .iconchoice, .iconDrag { height: 100px; width: 100px; display: inline-block; margin-bottom: 15px; }
+
+.choice h1 { margin-bottom: 50px; font-weight: bold; color: #002d6f; margin: 30px 0px; }
+
+.choice h3 { font-weight: bold; color: #fff; font-size: 14px; margin-top: 5px; }
+
+.choice button { display: block; margin: 0 auto; margin-bottom: 10px; background-color: #002d6f; color: #fff; width: 100%; border: none; border-radius: 10px; padding: 20px; }
+
+/* NIVELES -------------------------------- */
+.gameContent { width: 315px; height: 412px; overflow: hidden; position: relative; }
+
+.gameContent * { position: absolute; }
+
+@keyframes globos { 0% { transform: translateY(0px); }
+  100% { transform: translateY(-500px); } }
+
+.globoGame { background: #03a9f4; }
+
+.globoGame .globoGameTarget { animation: globos 5s; }
+
+.globoGame .globoGameTarget.taped { display: none; }
+
+@keyframes n14 { 0% { background-position-y: 100%; }
+  100% { background-position-y: 0%; } }
+
+#n14 .juego { animation: n14 50s; animation-timing-function: linear; background-image: url(../img/n14back.jpg); }

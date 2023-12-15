@@ -1,0 +1,835 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="es"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="es"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Este verano jugá con Play RE/MAX</title>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HZ739HLVD"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-4HZ739HLVD');
+        </script>
+        <meta name="description" content="Este verano jugá con Play RE/MAX y completá todos los desafíos ¿Qué tan lejos podés llegar?">
+        <link rel="manifest" href="manifest.webmanifest">
+        <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="img/remax.png">
+        <link rel="icon" type="image/png" href="img/remax.png">
+
+
+        <meta property="og:title" content="Yo ya jugué Play RE/MAX ¿Cuántos puntos podés hacer?" class="ogTitle">
+        <meta property="og:description" content="Este verano jugá con Play RE/MAX">
+        <meta property="og:image" content="https://playremax.com/img/sharePlayRemax.jpg">
+        <meta property="og:url" content="http://playremax.com/">
+
+        <meta name="twitter:title" content="Yo ya jugué Play RE/MAX ¿Cuántos puntos podés hacer?" class="twTitle">
+        <meta name="twitter:description" content="Este verano jugá con Play RE/MAX">
+        <meta name="twitter:image" content="https://playremax.com/img/sharePlayRemax.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">                        
+        <link rel="stylesheet" href="css/main.css?v=0">
+
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>         
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+      
+      <main>
+        <header>
+          <img src="img/coin.svg" alt="Puntaje" style="width: 20px; height: 20px;"> <span id="score">0</span>  
+          <span style="display: inline-block; width: 150px;">
+          <img src="img/heart.svg" alt="Vidas" style="width: 20px; height: 20px;"> <span id="vidasTag">3</span> 
+          </span>
+          <span onclick="muteUnmute()" id="mute"><img src="img/mute-speaker.svg" alt="volumen" style="width: 20px; height: 20px;"></span>
+        </header>
+
+        <aside id="mensaje" class="hidden">
+          <h3>Muy Bien!</h3>          
+          <h1>Puntaje: <span id="scoreMenTag">0</span></h1>
+          <h4 id="recordTag" class="hidden">Record: 10000</h4>
+          <br>
+          <a class="btn btn-danger" id="homeBtn"><i class="glyphicon glyphicon-home"> </i></a>
+          <a class="btn btn-success" id="siguiente" style="height: 34px;">Siguiente <i class="glyphicon glyphicon-play"></i></a>
+          <br><br><br>
+
+          <button id="" class="btn btn-default btn-xs shareButton">Compartir</button>          
+          <div id="shareFallback" class="hidden">              
+                <!-- Facebook -->
+                <a href="http://www.facebook.com/sharer.php?u=https://playremax.com/" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width: 30px; height: 30px;" />
+                </a>
+                <!-- Twitter -->
+                <a href="https://twitter.com/share?url=https://playremax.com/" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" style="width: 30px; height: 30px;" />
+                </a>
+          </div>
+        </aside>
+
+        <aside id="reloj" class="hidden">
+          <span class="" style="width: 100%;"></span>
+        </aside>
+
+        
+
+
+        <section id="home">
+          <img src="img/remax.png" alt="RE/MAX" loading="lazy" class="remaxlogo">
+          <h1>Play <span style="color: #dc1c2e; font-weight: bold;">RE<span style="color: #002d6f; font-weight: bold;">/</span>MAX</span></h1>
+          <!-- <a href="#tutorial" id="playGame" onclick="playPausa()"> -->
+          <a href="#tutorial" id="playGame">
+            <img src="img/playGame.svg" alt="Play">
+          </a>    
+          <br><br>
+          <p>Dificultad:</p>
+          <button id="facil"  autofocus class="btn btn-default btn-xs">Fácil</button>
+          <button id="medio" class="btn btn-default btn-xs">Medio</button>
+          <button id="dificil" class="btn btn-default btn-xs">Difícil</button>
+
+          <br><br>
+          <button id="a2hs" class="btn btn-default" style="margin: 0 auto;">Agregar a pantalla de inicio</button>
+          <br>
+          <a href="#legales">Terminos y condiciones</a>
+                  
+        </section>
+
+
+        <section id="tutorial">
+          <h3>¿Cómo jugar?</h3>
+          <br>
+          <p>
+            <img src="img/tuto-leer.png" alt="" loading="lazy">
+            <br>
+            Leé la consigna atentamente
+          </p>
+          <p>
+            <img src="img/tuto-tiempo.png" alt="" loading="lazy">
+            <br>
+            Completá el desafío antes <br>que se termine el tiempo
+          </p>
+          <p>
+            <img src="img/tuto-vidas.png" alt="" loading="lazy">
+            <br>
+            ¡No pierdas vidas!
+          </p>          
+          <a href="#niveles" onclick="muteUnmute()" class="btn btn-success">
+            A jugar!!
+          </a>    
+        </section>
+
+        <section id="niveles">
+          <h1>Pantallas</h1>
+          <a href="#n1" class="">1</a>
+          <a href="#n2" class=" desactivar">2</a>
+          <a href="#n3" class=" desactivar">3</a>
+          <a href="#n4" class=" desactivar">4</a>
+          <a href="#n5" class=" desactivar">5</a>
+          <a href="#n6" class=" desactivar">6</a>
+          <a href="#n7" class=" desactivar">7</a>
+          <a href="#n8" class=" desactivar">8</a>
+          <a href="#n9" class=" desactivar">9</a>
+          <a href="#n10" class=" desactivar">10</a>
+          <a href="#n11" class=" desactivar">11</a>
+          <a href="#n12" class=" desactivar">12</a>
+          <a href="#n13" class=" desactivar">13</a>
+          <a href="#n14" class=" desactivar">14</a>          
+          <a href="#n15" class=" desactivar">15</a>
+          <a href="#n16" class=" desactivar">16</a>
+          <a href="#n17" class=" desactivar">17</a>
+          <a href="#n18" class=" desactivar">18</a>
+          <a href="#n19" class=" desactivar">19</a>
+          <a href="#n20" class=" desactivar">20</a>
+
+        </section>
+
+
+        <section id="legales">
+          
+          <article class="text-center">
+            <h1>Términos y condiciones</h1>
+            
+            <p >
+              Para ejercer la actividad inmobiliaria se debe cumplir con los requerimientos de la ley de corretaje dentro de cada jurisdicción. Todas las operaciones son objeto de intermediación y conclusión por parte de un corredor público inmobiliario matriculado. Los Agentes/Gestores no pueden realizar actos que, por disposiciones legales, se encuentran reservados exclusivamente a los corredores públicos inmobiliarios matriculados. Cada oficina es de propiedad y gestión independiente.
+            </p>
+
+          
+            <a href="#home" class="btn btn-default" onclick="reset()">volver al inicio</a>
+          
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n1" data-level="1">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 1</h1>
+            <img src="img/choice.gif" alt="Choice" class="iconchoice" loading="lazy">
+            <p>
+              Elegí la opción correcta!
+              <br>
+              <strong>OJO</strong>, las incorrectas te restan vidas!!
+            </p>
+            <button onclick="play('#n1');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div class="choice">
+              <h1>En Argentina el verano empieza en:</h1>
+              
+              <button onclick="error2()"> Octubre</button>
+              <button id="n1target"> Diciembre</button>
+              <button onclick="error2()"> Enero</button>
+            </div>
+          </article>
+                  
+        </section>      
+        
+        <!-- nivel ================================================================ -->
+        
+        <section id="n2" data-level="2">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 2</h1>
+            <img src="img/touch.gif" alt="Touch" class="iconTouch" loading="lazy">
+            <p>
+              Encontrá el cartel de RE/MAX
+            </p>
+            <button onclick="play('#n2');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+                      
+            <img src="img/n2.jpg" alt="" loading="lazy"/>            
+            <div class="target" id="n2target" style="bottom: 65px; left: 50px;"></div>
+            
+          </article>
+
+          <script>  
+              
+          </script>
+                  
+        </section>
+
+        <!-- nivel ================================================================ -->
+
+        <section id="n3" data-level="3">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 3</h1>
+            <img src="img/touch.gif" alt="Touch" class="iconTouch" loading="lazy">
+            <p>
+              Encontrá todos los carteles REMAX!
+            </p>
+            <button onclick="play('#n3');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <img src="img/n3.jpg" alt="" loading="lazy"/>            
+            <div class="target" id="n3-1" style="bottom: 93px; left: 47px;"></div>
+            <div class="target" id="n3-2" style="bottom: 18px; left: 143px;"></div>
+            <div class="target" id="n3-3" style="bottom: 152px; left: 12px;"></div>
+            <div class="target" id="n3-4" style="top: 65px; left: 166px;"></div>
+            <div class="target" id="n3-5" style="top: 122px; left: 105px;"></div>
+            <div class="target" id="n3-6" style="top: 193px; left: 126px;"></div>
+            <div class="target" id="n3-7" style="bottom: 129px; left: 258px;"></div>
+            <div class="target" id="n3-8" style="top: 258px; left: 120px;"></div>
+            <div class="target" id="n3-9" style="top: 292px;left: 247px;"></div>
+            <div class="target" id="n3-10" style="bottom: 319px; left: 58px;"></div>
+          </article>
+                  
+        </section>      
+        <!-- nivel ================================================================ -->
+
+
+        <section id="n4" data-level="4">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 4</h1>
+            <img src="img/choice.gif" alt="Choice" class="iconchoice" loading="lazy">
+            <p>
+              Elegí la opción correcta!
+              <br>
+              <strong>OJO</strong>, las incorrectas te restan vidas!!
+            </p>
+            <button onclick="play('#n4');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div class="choice">
+              <h1>¿Cómo hacen las olas y el viento?</h1>
+              
+              <button onclick="error2()">Tururú,  tururú </button>
+              <button onclick="error2()">Shala, lalalá</button>
+              <button id="n4target">Sucundúm, sucundúm </button>
+            </div>
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n5" data-level="5">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 5</h1>
+            <img src="img/touch.gif" alt="Touch" class="iconTouch" loading="lazy">
+            <p>
+              Atrapá 10 Globos! que no se te escapen!
+              <br>
+              <strong>¡Ojo con las bombas!</strong>
+            </p>
+            
+            <button onclick="play('#n5');" id="iniciar5">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div id="n5game" class="gameContent globoGame" style="background-image:url(img/n5.jpg); background-size: cover; ">            
+              <img src="img/emoji.png" alt="" style="bottom: -10px ; left:50px;" class="n5target globoGameTarget">
+              <img src="img/emoji.png" alt="" style="bottom: -10px ; left:100px;" class="n5target globoGameTarget">
+              <img src="img/emoji.png" alt="" style="bottom: -10px ; left:200px;" class="n5target globoGameTarget">
+            </div>            
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n6" data-level="6">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 6</h1>
+            <img src="img/choice.gif" alt="Choice" class="iconchoice" loading="lazy">
+            <p>
+              Elegí la opción correcta!
+              <br>
+              <strong>OJO</strong>, las incorrectas te restan vidas!!
+            </p>
+            <button onclick="play('#n6');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div class="choice">
+              <h3>Adivina</h3>
+              <img src="img/adivina-3.JPG" loading="lazy" style="width: 200px; height: auto;">
+              <br>
+              
+              <button onclick="error2()">Sonrisa Sonrisa</button>
+              <button id="n6target">Pelota Paleta</button>
+              <button onclick="error2()">Pelota Chupetín</button>
+              
+            </div>
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n7" data-level="7">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 7</h1>
+            <img src="img/lupa.png" alt="Touch" class="iconTouch" loading="lazy">
+            <p>
+              Encontrá la diferencia!
+            </p>
+            <button onclick="play('#n7');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <img src="img/n7.jpg" alt="" loading="lazy"/>            
+            <div class="target n7target" style="bottom: 273px; left: 80px;"></div>
+            <div class="target n7target" style="bottom: 68px; left: 80px;"></div>
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n8" data-level="8">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 8</h1>
+            <img src="img/choice.gif" alt="choice" class="iconchoice" loading="lazy">
+            
+            <p>
+              Elegí la opción correcta!
+              <br>
+              <strong>OJO</strong>, las incorrectas te restan vidas!!
+            </p>
+
+            <button onclick="play('#n8');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div class="choice">
+              <h1>Y dice así:  Alcanzá lo que soñás… </h1>
+                            
+              <button onclick="error2()">Si queres vender, comprar o alquilar..</button>
+              <button id="n8target">Con RE/MAX</button>
+              <button onclick="error2()">Siempre cerca tuyo</button>
+              
+            </div>
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n9" data-level="9">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 9</h1>
+            <img src="img/touch.gif" alt="Touch" class="iconTouch" loading="lazy">
+            <p>
+              Encontrá el Globo RE/MAX
+            </p>
+            <button onclick="play('#n9');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <img src="img/n9.jpg" alt="" loading="lazy"/>            
+            <div class="target" id="n9target" style="bottom: 207px; left: 110px;"></div>
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n10" data-level="10">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 10</h1>
+            <img src="img/choice.gif" alt="choice" class="iconchoice" loading="lazy">
+            
+            <p>
+              Elegí la opción correcta!
+              <br>
+              <strong>OJO</strong>, las incorrectas te restan vidas!!
+            </p>
+
+            <button onclick="play('#n10');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div class="choice">
+              <h1>¿Dónde se inventó el helado?</h1>
+              <button onclick="error2()">Brasil</button>
+              <button onclick="error2()">Italia</button>
+              <button id="n10target">China</button>
+            </div>
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n11" data-level="11">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 11</h1>
+            <img src="img/lupa.png" alt="Touch" class="iconTouch" loading="lazy">
+            <p>
+              Encontrá la diferencia!
+            </p>
+            <button onclick="play('#n11');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <img src="img/n11.jpg" alt="" loading="lazy"/>            
+            <div class="target n11target" style="bottom: 284px; left: 273px;"></div>
+            <div class="target n11target" style="bottom: 78px; left: 272px;"></div>
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n12" data-level="12">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 12</h1>
+            
+
+            <img src="img/choice.gif" alt="Choice" class="iconchoice" loading="lazy">
+            <p>
+              Elegí la opción correcta!
+              <br>
+              <strong>OJO</strong>, las incorrectas te restan vidas!!
+            </p>
+
+
+            <button onclick="play('#n12');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div class="choice">
+              <h1>Pablito clavó un clavito…</h1>                            
+              <button onclick="error2()">En la calva de un clavito</button>
+              <button id="n12target">¿Qué clavito clavó Pablito?</button>              
+              <button onclick="error2()">En el clavo de Pablito </button>              
+            </div>
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n13" data-level="13">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 13</h1>
+            
+            <img src="img/lupa.png" alt="Touch" class="iconTouch" loading="lazy">
+            <p>
+              Encontrá la diferencia!
+            </p>
+
+            <button onclick="play('#n13');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <img src="img/n13.jpg" alt="" loading="lazy"/>            
+            <div class="target n13target" style="top: 176px; right: -6px;"></div>
+            <div class="target n13target" style="bottom: -10px; right: -5px;"></div>
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+
+        <section id="n14" data-level="14">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 14</h1>
+            
+            <img src="img/touch.gif" alt="Touch" class="iconTouch" loading="lazy">
+            <p>
+              Encontrá todos los Globos RE/MAX!
+            </p>
+
+            <button onclick="play('#n14');">Play</button>
+          </article>
+
+          <article class="juego hidden" style="background-size: 100%;">
+            <img src="img/n14.png" alt="" loading="lazy">
+            <div class="target n14target" style="top: 322px; right: 103px;"></div>
+            <div class="target n14target" style="top: 239px; right: 70px;"></div>
+            <div class="target n14target" style="top: 204px; right: 142px;"></div>
+            <div class="target n14target" style="top: 257px; left: 52px;"></div>
+            <div class="target n14target" style="top: 175px; left: 4px;"></div>
+            <div class="target n14target" style="top: 138px; left: 58px;"></div>
+            <div class="target n14target" style="top: 120px; right: 107px;"></div>
+            <div class="target n14target" style="top: 154px; right: 12px;"></div>
+            <div class="target n14target" style="top: 34px; left: 7px;"></div>
+            <div class="target n14target" style="top: 68px; left: 93px;"></div>
+            <div class="target n14target" style="top: 80px; right: 45px;"></div>
+
+            
+
+            <div class="target" style="top: 32px; right: 104px; border-color: red; box-shadow: 1px 1px 5px red;" onclick="error2()"></div>
+            <div class="target" style="bottom: 37px; right: 222px;; border-color: red; box-shadow: 1px 1px 5px red;" onclick="error2()"></div>
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n15" data-level="15">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 15</h1>
+            
+            <img src="img/choice.gif" alt="Choice" class="iconchoice" loading="lazy">
+            <h3>¡Adivina!</h3>
+            <p>             
+              <strong>OJO</strong>, las incorrectas te restan vidas!!
+            </p>
+
+            <button onclick="play('#n15');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div class="choice">
+              <h3>Adivina!</h3>
+              <img src="img/adivina-5.JPG" alt="" loading="lazy" style="width: 200px; height: auto;">                        
+              <button onclick="error2()">Ojo</button>
+              <button id="n15target">Tejo</button>              
+              <button onclick="error2()">Piojo </button>              
+            </div>
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n16" data-level="16">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 16</h1>
+            
+            <img src="img/choice.gif" alt="Choice" class="iconchoice" loading="lazy">
+            <h3>Adivina!</h3>
+            <p>              
+              
+              <strong>OJO</strong>, las incorrectas te restan vidas!!
+            </p>
+
+            <button onclick="play('#n16');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div class="choice">
+              <h3>Adivina!</h3>
+              <img src="img/adivina-2.JPG" alt="" loading="lazy" style="width: 200px; height: auto;">                        
+              <button onclick="error2()">Palito bola paleta!</button>              
+              <button onclick="error2()">Palito bombón palito!</button>              
+              <button id="n16target">Palito bombón helado!</button>              
+            </div>
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n17" data-level="17">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 17</h1>
+            <img src="img/touch.gif" alt="Touch" class="iconTouch" loading="lazy">
+            <p>
+              Atrapá 15 Globos
+              <br>
+              <strong>¡Ojo con las bombas!</strong>
+            </p>
+            <button onclick="play('#n17');" id="iniciar17">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div id="n17game" class="gameContent globoGame" style="background-image:url(img/n5.jpg); background-size: cover; ">            
+              <img src="img/emoji.png" alt="" style="bottom: -10px ; left:50px;" class="n17target globoGameTarget">
+              <img src="img/emoji.png" alt="" style="bottom: -10px ; left:100px;" class="n17target globoGameTarget">
+              <img src="img/emoji.png" alt="" style="bottom: -10px ; left:200px;" class="n17target globoGameTarget">
+            </div>            
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n18" data-level="18">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 18</h1>
+            
+            <img src="img/choice.gif" alt="Choice" class="iconchoice" loading="lazy">
+            <p>
+              Elegí la opción correcta!
+              <br>
+              <strong>OJO</strong>, las incorrectas te restan vidas!!
+            </p>
+
+            <button onclick="play('#n18');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div class="choice">
+              
+              <h1>¿Cómo se dice "ojotas" en inglés?</h1>              
+              <button onclick="error2()">Ojoutas</button>              
+              <button id="n18target">Flip Flops</button>    
+              <button onclick="error2()">Summer Shoes</button>              
+              
+            </div>          
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n19" data-level="19">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 19</h1>
+            
+            <img src="img/choice.gif" alt="Choice" class="iconchoice" loading="lazy">
+            <p>
+              Elegí la opción correcta!
+              <br>
+              <strong>OJO</strong>, las incorrectas te restan vidas!!
+            </p>
+
+            <button onclick="play('#n19');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div class="choice">
+              <h3>Adivina!</h3>
+              <img src="img/adivina-1.JPG" alt="" loading="lazy" style="width: 200px; height: auto;">                        
+              <button onclick="error2()">Casa de oro</button>              
+              <button onclick="error2()">Castillo mágico</button>              
+              <button id="n19target">Castillo de arena</button>    
+            </div>          
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n20" data-level="20">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 20</h1>
+            <img src="img/touch.gif" alt="Touch" class="iconTouch" loading="lazy">
+            <p>
+              Atrapá 15 Globos
+              <br>
+              <strong>¡Ojo con las bombas!</strong>
+            </p>
+            <button onclick="play('#n20');" id="iniciar20">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div id="n20game" class="gameContent globoGame" style="background-image:url(img/n20.jpg); background-size: cover; ">            
+              <img src="img/emoji.png" alt="" style="bottom: -10px ; left:50px;" class="n20target globoGameTarget">
+              <img src="img/emoji.png" alt="" style="bottom: -10px ; left:100px;" class="n20target globoGameTarget">
+              <img src="img/emoji.png" alt="" style="bottom: -10px ; left:200px;" class="n20target globoGameTarget">
+            </div>            
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+        <section id="n21" data-level="21">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 21</h1>
+            
+            <img src="img/choice.gif" alt="Choice" class="iconchoice" loading="lazy">
+            <p>
+              Elegí la opción correcta!
+              <br>
+              <strong>OJO</strong>, las incorrectas te restan vidas!!
+            </p>
+
+            <button onclick="play('#n21');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div class="choice">
+              <h3>Adivina!</h3>
+              <img src="img/snorkel.jpg" alt="" loading="lazy" style="width: 200px; height: auto;">                        
+              <button id="n21target">Un Snorkel</button>    
+              <button onclick="error2()">Un palo de Jockey</button>              
+              <button onclick="error2()">Una antiparra</button>              
+              
+            </div>          
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+
+        <!-- nivel ================================================================ -->    
+
+        <section id="n27" data-level="27">
+          
+          <article class="consigna text-center">
+            <h1>Nivel 27</h1>
+            
+            <img src="img/choice.gif" alt="Choice" class="iconchoice" loading="lazy">
+            <p>
+              Elegí la opción correcta!
+              <br>
+              <strong>OJO</strong>, las incorrectas te restan vidas!!
+            </p>
+
+            <button onclick="play('#n27');">Play</button>
+          </article>
+
+          <article class="juego hidden">
+            <div class="choice">
+              <h3>¿Cómo se llama?</h3>
+              <img src="img/esterilla.jpg" alt="" loading="lazy" style="width: 200px; height: auto;">                                      
+              <button onclick="error2()">Reposera</button>              
+              <button onclick="error2()">Manta</button>              
+              <button id="n27target">Esterilla</button>    
+            </div>          
+          </article>
+                  
+        </section>  
+        <!-- nivel ================================================================ -->    
+
+
+        <section id="n31" data-level="31">
+                  
+            <article class="text-center">
+              <h1>¡Ganaste!</h1>
+              <h3>¿Te animás a jugar en modo difícil?</h3>
+
+              
+              
+              <!-- <img src="img/lupa.png" alt="Touch" class="iconTouch" loading="lazy">
+              <p>
+                Encontrá la diferencia!
+              </p> -->
+
+              <button onclick="reset();" class="btn btn-success ">Jugar de nuevo</button>
+              <br><br>
+              <button id="" class="btn btn-default btn-xs shareButton">Compartir puntaje</button>
+
+
+              <div id="shareFallback" class="hidden">              
+                  <br><br>
+                    <!-- Facebook -->
+                    <a href="http://www.facebook.com/sharer.php?u=https://playremax.com/" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width: 30px; height: 30px;" />
+                    </a>
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/share?url=https://playremax.com/" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" style="width: 30px; height: 30px;" />
+                    </a>
+              </div>
+            </article>
+
+            <article class="juego hidden">
+              <a href="#home" class="btn btn-default" onclick="reset()">volver al inicio</a>
+            </article>
+                    
+          </section>  
+
+        
+
+        
+        <audio src="music/fondo.mp3" preload="auto" id="s-fondo"></audio>
+        <audio src="music/acierto.mp3" preload="auto" id="s-acierto"></audio>
+        <audio src="music/error.mp3" preload="auto" id="s-error"></audio>
+      </main>
+
+        <script src="js/main.js?v=0"></script>
+        <script src="js/n1.js"></script>
+        <script src="js/n2.js"></script>
+        <script src="js/n3.js"></script>
+        <script src="js/n4.js"></script>
+        <script src="js/n5.js"></script>
+        <script src="js/n6.js"></script>
+        <script src="js/n7.js"></script>
+        <script src="js/n8.js"></script>
+        <script src="js/n9.js"></script>
+        <script src="js/n10.js"></script>
+        <script src="js/n11.js"></script>
+        <script src="js/n12.js"></script>
+        <script src="js/n13.js"></script>
+        <script src="js/n14.js"></script>
+        <script src="js/n15.js"></script>
+        <script src="js/n16.js"></script>
+        <script src="js/n17.js"></script>
+        <script src="js/n18.js"></script>
+        <script src="js/n19.js"></script>
+        <script src="js/n20.js"></script>
+        <script src="js/n21.js"></script>
+
+        <script>
+          if(navigator.serviceWorker){
+            navigator.serviceWorker.register('sw.js')
+          }
+        </script>
+    </body>
+</html>
